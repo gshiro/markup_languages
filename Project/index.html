@@ -79,8 +79,6 @@
         var jstart2=0;
         var jstop1=0;
         var jstop2=0;
-        var jcounter1=0;
-        var jcounter2=0;
         var x = 450;
         var y = 100;
         var dx = 20;
@@ -90,11 +88,9 @@
            var dado=Math.floor((Math.random()*10))+1;
             
             if (who=='first' && jstop1==0){
-                jcounter1=jcounter1+dado;
                 document.getElementById('dadoak1').innerHTML="<img src='img/"+dado+".png' width='200px;' height='200px;'/>";
             }
                   else if(who=='second' && jstop2==0){
-                jcounter2=jcounter2+dado;
               document.getElementById('dadoak2').innerHTML="<img src='img/"+dado+".png' width='200px;' height='200px;'/>";
                   }
                  
