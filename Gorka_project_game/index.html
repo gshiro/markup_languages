@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link href="css/game.css" rel="stylesheet" type="text/css">
+        <title>Game Number one</title>
+    </head>
+    <body>
+       
+        <center>
+                <div id="box" class="box1"></div>
+                <div id="circle" class="circle1"></div><br>
+                <br>
+            <table id="table" border="1px solid black">
+                <tr>
+                    <td id="1"></td>
+                    <td id="2"></td>
+                    <td id="3"></td>
+                    <td id="4"></td>
+                    <td id="5"></td>
+                    <td id="6"></td>
+                    <td id="7"></td>
+                    <td id="8"></td>
+                    <td id="9"></td>
+                    <td id="10"></td>
+                </tr>
+                <tr>
+                    <td id="11"></td>
+                    <td id="12"></td>
+                    <td id="13"></td>
+                    <td id="14"></td>
+                    <td id="15"></td>
+                    <td id="16"></td>
+                    <td id="17"></td>
+                    <td id="18"></td>
+                    <td id="19"></td>
+                    <td id="20"></td>
+                </tr>
+                <tr>
+                    <td id="21"></td>
+                    <td id="22"></td>
+                    <td id="23"></td>
+                    <td id="24"></td>
+                    <td id="25"></td>
+                    <td id="26"></td>
+                    <td id="27"></td>
+                </tr>
+            </table>
+            <br>
+            <div id="perfect">
+                  <input type="button" value="Start_Game" id="start" onclick="draw('first')">
+                <input type="button" value="Start_Game2" id="start" onclick="draw('second')"/>
+                <br>
+                <div id="dadoak1"><img src="img1/fondo.jpg" width="200px;" height="200px;"></div>
+                <div id="dadoak2"><img src="img1/fondo.jpg" width="200px;" height="200px;"></div>
+            </div>
+          
+            <br>
+            
+            <div id="one">
+                <center>
+                     <h1>The table game</h1>
+                    <h2>What do you need to do:</h2>
+                    <p>You need to use the dice to move around the table and try to arrive first to the final, if you do it you will win! Good luck players!</p>
+                </center>
+               
+            </div>
+        
+           
+            
+        </center>
+        
+        <script>
+        document.getElementById("box").style.left = "450px";
+        document.getElementById("box").style.top = "100px";
+        var jstart1=0;
+        var jstart2=0;
+        var jstop1=0;
+        var jstop2=0;
+        var jcounter1=0;
+        var jcounter2=0;
+        var x = 450;
+        var y = 100;
+        var dx = 20;
+        var dy = 20;
+            
+    function draw(who){
+           var dado=Math.floor((Math.random()*10))+1;
+            
+            if (who=='first' && jstop1==0){
+                jcounter1=jcounter1+dado;
+                document.getElementById('dadoak1').innerHTML="<img src='img/"+dado+".png' width='200px;' height='200px;'/>";
+            }
+                  else if(who=='second' && jstop2==0){
+                jcounter2=jcounter2+dado;
+              document.getElementById('dadoak2').innerHTML="<img src='img/"+dado+".png' width='200px;' height='200px;'/>";
+                  }
+                 
+             };
+            
+          document.addEventListener('keydown', function(event) {
+            console.log(event.keyCode);
+            if (event.keyCode == 39){
+                if (x + 40 == a && y == b){
+                  alert('You can´t move more');
+              }
+                else {
+                   x = x + dx; 
+                }
+            	
+            }
+            if (event.keyCode == 37){
+                 if (x - 40 == a && y == b){
+                  alert('You can´t move more');
+              }
+                else {
+            	   x = x - dx; 
+                }
+              
+            }
+            if (event.keyCode == 40){
+                if (x  == a && y  + 40 == b){
+                  alert('You can´t move more');
+                }
+                else {
+                   	y = y + dy; 
+                }
+            
+            }
+            if (event.keyCode == 38){
+                if (x  == a && y - 40 == b){
+                  alert('You can´t move more');
+                }
+                    else {
+                    y = y - dy;
+                }
+            	
+            }
+            document.getElementById("box").style.left = x  + 'px';
+            document.getElementById("box").style.top = y  + 'px';
+             
+              if (x >= 1050 && x <= 1110 && y >= 240 && y <= 300){
+                  alert('Player 1 win');
+                 document.location.href = document.location.href;
+              }
+                  
+            
+        });
+        document.getElementById("circle").style.left = "450px";
+        document.getElementById("circle").style.top = "60px";
+        var a = 450;
+        var b = 60;
+        var da = 20;
+        var db = 20;
+
+        document.addEventListener('keydown', function(event) {
+            console.log(event.keyCode);
+            if (event.keyCode == 68){
+                 if (a + 40 == x && b == y){
+                  alert('You can´t move more');
+              }
+                else {
+                   a = a + da; 
+                }
+            	
+            }
+            if (event.keyCode == 65){
+                 if (a - 40 == x && b == y){
+                  alert('You can´t move more');
+              }
+                else {
+                   a = a - da; 
+                }
+            	
+            }
+            if (event.keyCode == 83){
+                  if (a == x && b + 40 == y){
+                  alert('You can´t move more');
+              }
+                else {
+                    b = b + db;
+                }
+            	
+            }
+            if (event.keyCode == 87){
+                 if (a == x && b - 40 == y){
+                  alert('You can´t move more');
+              }
+                else {
+                   b = b - db; 
+                }
+            	
+            }
+            document.getElementById("circle").style.left = a  + 'px';
+            document.getElementById("circle").style.top = b  + 'px';
+            
+                    if (a >= 1050 && a <= 1110 && b >= 240 && b <= 300){
+                  alert('Player 2 win');
+                  document.location.href = document.location.href;
+              }
+        });
+
+        </script>
+
+    </body>
+</html>
