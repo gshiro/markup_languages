@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Noughts and Cross</title>
+        <script type="text/javascript">
+           var player=1;
+            var img="images/0.png";
+            var fun=new Array();
+            for(i=0; i<=8; i++){
+                fun[i]=-1;
+            }
+            function box(pos){
+                var z="c"+pos;
+                if (player==1){
+                    document.getElementById(z).src=img;
+                    img="images/1.png";
+                    player=2; 
+                     fun[pos]=0;
+                    
+                }
+                else {
+                    document.getElementById(z).src=img;
+                    img="images/0.png";
+                    player=1;
+                     fun[pos]=1;
+                }
+               
+            }
+            function reset(){
+                img="images/2.jpg";
+                for (i=0;i<9;i++){
+                    var z="c"+i;
+                    document.getElementById(z).src=img;
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <center>
+        <p>The first person who put 3 cross or 3 noughts in a row win</p>
+        <table border="1">
+            <tr>
+                <td><img src="images/2.jpg" width="150px" height="150px" id="c0" onClick="box(0)"/></td>
+                <td><img src="images/2.jpg" width="150px" height="150px" id="c1" onClick="box(1)"/></td>
+                <td><img src="images/2.jpg" width="150px" height="150px" id="c2" onClick="box(2)"/></td>
+            </tr>
+            <tr>
+                <td><img src="images/2.jpg" width="150px" height="150px" id="c3" onClick="box(3)"/></td>
+                <td><img src="images/2.jpg" width="150px" height="150px" id="c4" onClick="box(4)"/></td>
+                <td><img src="images/2.jpg" width="150px" height="150px" id="c5" onClick="box(5)"/></td>
+            </tr>
+            <tr>
+                <td><img src="images/2.jpg" width="150px" height="150px" id="c6" onClick="box(6)"/></td>
+                <td><img src="images/2.jpg" width="150px" height="150px" id="c7" onClick="box(7)"/></td>
+                <td><img src="images/2.jpg" width="150px" height="150px" id="c8" onClick="box(8)"/></td>
+            </tr>
+        </table>
+            <input type="button" value="Reset" onclick="reset()"/>
+        </center>
+    </body>
+</html>

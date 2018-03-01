@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+	<title>Lanzamiento de dado</title>
+
+	<meta charset="utf-8" />
+	<link rel="stylesheet" type="text/css" href="./estiloa/azter.css" />
+
+	<script src="js/jquery-3.1.1.min.js"></script>
+
+	<script>
+          $(document).ready(function(){
+              $(".top").click(function(){
+                  $(".second").slideToggle();
+              });
+          });
+       
+        var jstart1=0;
+        var jstart2=0;
+        var jstop1=0;
+        var jstop2=0;
+        var jcounter1=0;
+        var jcounter2=0;
+        
+        function draw(who){
+           var dado=Math.floor((Math.random()*10))+1;
+            
+            if (who=='first' && jstop1==0){
+                jcounter1=jcounter1+dado;
+                document.getElementById('dadoak1').innerHTML="<img src='irudiak/"+dado+".png' width='200px;' height='200px;'/>";
+                document.getElementById('jcounter1').innerHTML="<h2>"+jcounter1+"</h2>";
+             
+                if (who=='first' && jcounter1>10){
+                jstop1=1;
+            };
+                
+            }
+            
+            
+            else if(who=='second' && jstop2==0){
+                jcounter2=jcounter2+dado;
+              document.getElementById('dadoak2').innerHTML="<img src='irudiak/"+dado+".png' width='200px;' height='200px;'/>";
+                document.getElementById('jcounter2').innerHTML="<h2>"+jcounter2+"</h2>";
+            if (who=='second' && jcounter2>10){
+            jstop2=1;
+          }
+            
+            }
+            
+            if (jstop1==1 && jcounter1==1){
+                document.getElementById("winner").innerHTML="Jokalari 1 irabazi du";
+            }
+            else{
+                document.getElementById("winner").innerHTML="Jokalari 2 irabazi du";
+            }
+        };
+        
+	</script>
+	<style>
+        ul{
+            float: left;
+        }
+        .second{
+            display: none;
+            list-style: none:
+        }
+
+	</style>
+</head>
+
+<body>
+	<header>
+
+		<div id="logo"></div>
+
+		<div id="title">Dado Jokuak</div>
+
+	</header>
+	<nav>
+             <ul>
+                <li class="top">Mahai jokuak</li>
+                <ul class="second">
+                    <li>Partxisa</li>
+                    <li>Oca</li>
+                </ul>
+            </ul>
+            <ul>
+                <li class="top">Karta jokuak</li>
+                <ul class="second">
+                    <li>Black Jack</li>
+                    <li>Monopoli</li>
+                </ul>
+            </ul>
+            <ul>
+                <li class="top">Bingo jokuak</li>
+                <ul class="second">
+                    <li>Poker</li>
+                    <li>Ruleta</li>
+                </ul>
+            </ul> 
+		<!-- Idatzi html5 kodea -->
+	</nav>
+	<section>
+       <center>
+            <h2>Jolastu</h2>
+           <table>
+                <tr>
+                    <td id="jcounter1"><h2>0</h2></td> 
+                    <td id="dadoak1"><img src="irudiak/dado.jpg"></td>
+                    <td id="dadoak2"><img src="irudiak/dado.jpg"></td>
+                    <td id="jcounter2"><h2>0</h2></td>
+                </tr>
+               <tr>
+                <td id="winner"></td>
+                <td id="winner"></td>
+               </tr>
+               <tr>
+                <td><input type="button" value="Tira jokalari 1" onclick="draw('first')"/>
+                </td>
+                <td><input type="button" value="Hasieratu" onclick="reset()"/>
+                   </td>
+                <td><input type="button" value="Tira jokalari 2" onclick="draw('second')"/>
+                   </td>
+               </tr>
+           </table>
+        </center>
+        <!-- Idatzi html5 kodea -->
+	</section>
+	<footer>&copy; Gorka Gastesi -2017</footer>
+</body>
+
+</html>

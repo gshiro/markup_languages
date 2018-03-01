@@ -1,0 +1,55 @@
+body{
+    background-color: chartreuse;
+}
+
+#box{
+    background-color: red;
+    border-style: solid;
+    position: absolute;
+    left: 250px;
+    top: 100px;
+    width: 30px;
+    height: 30px; 
+}
+
+#circle{
+    background-color: blue;
+    border-style: solid;
+    position: absolute;
+    left: 250px;
+    top: 60px;
+    width: 30px;
+    height: 30px;
+}
+
+#table{
+    width: 950px;
+    height: 300px;
+    left: 200px;
+    top: 200px;
+}
+
+#start{
+    margin-left: 350px;
+    clear: both;
+}
+
+#dadoak1{
+    margin-top: 20px;
+    float: left;
+    margin-left: 600px;
+}
+
+#dadoak2{
+    margin-top: 20px;
+    margin-left: 250px;
+    float:left;
+}
+
+#perfect{
+    width: 100%;
+    float: left;
+}
+
+#one{
+}

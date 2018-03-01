@@ -1,0 +1,36 @@
+#one{
+    margin-left: 1300px;
+    width: 560px;
+    height: 400px;
+}
+
+.container-fluid{
+    width: 2024px;
+    height: 100px;
+    background-color: black;
+}
+
+#exampleSelect1{
+    height: 35px;
+}
+
+#info{
+    width: 50%;
+    float: left;
+}
+
+#info2{
+    width: 40%;
+    float: right;
+    margin-top: 60px;
+    margin-left: 150px;
+}
+
+#text{
+    text-align: center;
+    font-size: 20px;
+}
+
+#text2{
+    font-size: 20px;
+}

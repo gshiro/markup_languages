@@ -1,0 +1,240 @@
+body {
+
+    width:100%;
+
+    margin: 0px;
+
+    text-align: center;
+
+    color:white;
+
+    background-image: url(../irudiak/fondo-azul.jpg);
+
+ 
+
+}
+
+
+@font-face {
+
+    font-family: nireletra;
+
+    src: url(../letra/BLKCHCRY.ttf);
+
+}
+
+
+header{
+
+    background-color: #08298A;
+
+    width: 100%;
+
+    height: 140px;
+
+    top: 0px;
+
+}
+
+
+footer {
+
+    clear:both;
+
+    float:left;
+
+    background-color:#08298A;
+
+    width: 100%;
+
+    height: 25px;
+    
+    padding-top:5px;
+
+    font-family:nireletra;
+
+    font-size: 14px;
+    
+    margin-top:35px;
+
+    border-top: 1px solid white;
+
+}
+
+
+nav {
+
+    float:left;
+
+    background-color: #08298A;
+
+    width: 100%;
+
+    height: 50px;
+
+    margin-top: -20px;
+  
+    border-bottom: 1px solid white;
+
+    border-top: 1px solid white;
+
+  
+
+
+}
+
+
+#logo {
+
+    float: left;
+
+    background-image: url(../irudiak/logo.jpg);
+
+    height: 90px;
+
+    width: 90px;
+
+    background-size: 90px 90px;
+
+    margin-top: 20px;
+
+    margin-left: 10px;
+
+}
+
+
+#title {
+
+    float: left;
+
+    font-family: nireletra;
+
+    font-size: 60px;
+
+    margin-top: 25px;
+
+    margin-left: 30%;
+
+}
+
+
+
+
+
+
+a {
+
+    text-decoration: none;
+
+
+}
+
+
+
+
+section{
+
+   float:left;
+
+   padding-top: 30px;
+
+   width:100%;
+
+   height:375px;
+
+
+
+
+}
+
+
+
+
+
+
+
+nav li {
+
+    display: block;
+
+    list-style: none;
+
+    width: 400px;
+
+    padding-top: 10px;
+
+    font-family: nireletra;
+
+    color: white;
+     
+    font-size: 18px;
+
+   
+
+
+}
+
+
+.second {
+
+    display: block;
+
+    width: 200px;
+
+    margin-top: 17px;
+
+    margin-left: -5px;
+
+
+    
+}
+
+
+.second li {
+
+    padding-bottom: 10px;
+
+    background-color:#0174DF;
+
+    width: 200px;
+
+    margin-left: 60px;
+
+    padding-left: 10px;
+   
+
+
+}
+
+
+
+
+
+.link {
+
+    float: left;
+
+    margin-top: -15px;
+     
+    font-size: 24px;
+
+}
+
+
+
+a {
+
+    text-decoration: none;
+}
+
+
+input {font-family:nireletra; font-size:16px;}
+
+
+#jolas { font-size:32px;}  
+
+
+h2 {font-family:nireletra;
+    font-size:32px;}
+
+h3 {font-family:nireletra;}
