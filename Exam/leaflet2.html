@@ -1,0 +1,157 @@
+<!DOCTYPE html><html>
+<meta charset="utf-8" />
+<head>
+	<script src="https://unpkg.com/leaflet@1.0.2/dist/leaflet.js"></script>
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.2/dist/leaflet.css" />
+	<link rel="stylesheet" href="http://code.ionicframework.com/ionicons/1.5.2/css/ionicons.min.css">
+  <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+
+ <style>
+  #map { 
+  width: 1900px;
+  height: 800px; }
+ </style>
+ 
+ </head>
+  <body>
+   <div id="map"></div>
+   <div>
+    <input class="get-markers" type="button" value="Get all the Markers" />
+    <input class="delete-markers" type="button" value="Delete markers" />
+</div>
+    <input type="button" onclick="zoomTo()" value="zoomTo"/>
+ <script>
+ 
+var map = L.map('map').
+setView([43.327441, -1.970837], 
+14);
+
+    function zoomTo() {
+       var lat;
+       var lng;
+       lat=prompt("Ingrese Latitud");
+       lng=prompt("Ingrese Longitud");
+        map.panTo(new L.LatLng(lat, lng));
+    } 
+
+L.circle([43.327441, -1.970837], {radius: 200}).addTo(map);
+L.circle([43.314944, -1.998425], {radius: 200}).addTo(map);
+L.circle([43.322435, -1.984059], {radius: 200}).addTo(map);
+//L.circle([43.322334, -1.991059], {radius: 2000}).addTo(map);//
+// attaching function on map click
+map.on('click', onMapClick);
+
+
+
+// Script for adding marker on map click
+function onMapClick(e) {
+
+    var geojsonFeature = {
+        "type": "Feature",
+            "properties": {},
+            "geometry": {
+                "type": "Point",
+                "coordinates": [e.latlng.lat, e.latlng.lng]
+        }
+    }
+
+    L.geoJson(geojsonFeature, {
+        
+        pointToLayer: function(feature, latlng){
+            
+            marker =  L.marker(e.latlng, {
+                title: "Resource Location",
+                alt: "Resource Location",
+                riseOnHover: true,
+                draggable: true,
+
+
+            }).bindPopup("<input type='button' value='Delete this marker' class='marker-delete-button'/>");
+
+
+            marker.on("popupopen", onPopupOpen);
+       
+            return marker;
+        }
+    }).addTo(map);
+}
+var tempMarker;
+// Function to handle delete as well as other events on marker popup open
+function onPopupOpen() {
+
+    tempMarker = this;
+
+    //var tempMarkerGeoJSON = this.toGeoJSON();
+
+    //var lID = tempMarker._leaflet_id; // Getting Leaflet ID of this marker
+
+    // To remove marker on click of delete
+    $(".marker-delete-button:visible").click(function () {
+        map.removeLayer(tempMarker);
+    });
+}
+
+// getting all the markers at once
+function getAllMarkers() {
+    
+    var allMarkersObjArray = [];//new Array();
+    var allMarkersGeoJsonArray = [];//new Array();
+
+    $.each(map._layers, function (ml) {
+        //console.log(map._layers)
+        if (map._layers[ml].feature) {
+            
+            allMarkersObjArray.push(this)
+                                    allMarkersGeoJsonArray.push(JSON.stringify(this.toGeoJSON()))
+        }
+    })
+
+    console.log(allMarkersObjArray);
+    alert("total Markers : " + allMarkersGeoJsonArray.length + "\n\n" + allMarkersGeoJsonArray + "\n\n Also see your console for object view of this array" );
+   
+}
+ $(".get-markers").on("click", getAllMarkers);
+
+var marker;
+
+var redMarker = L.icon({
+	iconUrl: 'leaflet/png/512/home.png',
+    icon: 'home',
+    iconSize: [20, 25],
+    markerColor: 'red'
+  });
+
+var redMarker2 = L.icon({
+	iconUrl: 'leaflet/png/512/star.png',
+    icon: 'star',
+    iconSize: [20, 25],
+    markerColor: 'red'
+  });
+
+var redMarker3 = L.icon({
+	iconUrl: 'leaflet/png/512/ios7-eye-outline.png',
+    icon: 'star',
+    iconSize: [20, 25],
+    markerColor: 'red'
+  });
+      
+   marker=L.marker([43.314944, -1.998425], {icon: redMarker2}).addTo(map).bindPopup
+('<div style="color: green">This is<br>Miramon jauregia</div>').openPopup();;
+    marker=L.marker([43.322435, -1.984059], {icon: redMarker3}).addTo(map).bindPopup
+('<div style="color: green">This is<br>Parte Zaharra</div>').openPopup();;
+ marker=L.marker([43.327441, -1.970837], {icon: redMarker}).addTo(map).bindPopup
+('<div style="color: dark">This is<br>Zubiri Manteo our school</div>').openPopup();;
+
+
+
+L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://cloudmade.com">CloudMade</a>',
+    maxZoom: 20
+}).addTo(map);
+
+L.control.scale().addTo(map);
+
+ </script>
+
+ </body> 
+ </html>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+  <title>Project</title>
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link href="css/style.css" rel="stylesheet" type="text/css">
+  <script src="https://unpkg.com/leaflet@1.0.2/dist/leaflet.js"></script>
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.2/dist/leaflet.css" />
+	<link rel="stylesheet" href="http://code.ionicframework.com/ionicons/1.5.2/css/ionicons.min.css">
+  <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Dancing+Script" rel="stylesheet">
+</head>
+<body>
+  <script>
+  // to hide the map when I open the page
+  $(window).load(function () {
+      $('#mapspace').hide();
+  });
+  </script>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">Tourism Guide</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="index.html"><img src="img/home-4x.png" alt="Home"> <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Places
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#" onclick="togglerest()"><img src="img/restaurant.png" class="ico">Restaurants</a>
+          <a class="dropdown-item" href="#" onclick="togglemus()"><img src="img/museum.png" class="ico">Museums</a>
+          <a class="dropdown-item" href="#" onclick="togglemon()"><img src="img/monument.png" class="ico">Monuments</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#" onclick="togglemap()">Map</a>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" id='searchbox' type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit" onclick="search()"><img src="img/search.png" class="ico"></button>
+    </form>
+  </div>
+</nav>
+
+<!--homepage-->
+  <div id="homepage">
+    <h1 id="titulo">Tourism-Guide</h1>
+    <div id="portada"></div>
+    <img class='portada' src="img/portada.jpg">
+    <div id="text">
+    <p>We created this page in order to help visitors that come all over the world, so they can enjoy their vacation. In
+      this webpage they will find different information about the variety of museums they could visit as well as the
+      distinct monuments they can go sightseeing over the city. They could also check which restaurants are recommended
+      and what those offer so they can get some food and then keep going with the visit.</p>
+      <br>
+      <p id="one"><span>We hope you enjoy your visit to our city</span></p>
+  </div>
+  </div>
+<!--restaurant section -->
+  <div id="restaurant">
+    <div class="row">
+    <div  class="col-sm-3">
+      <h1>CAMPERO</h1>
+      <img class="restimg" src="img/campero1.jpg">
+      <p>Campero is a restaurant that service different food near to our school,
+        is a good place because is cheap and delicius. A lot of people go to this place because
+      whenis school time the food they sell is cheaper for students.</p>
+    </div>
+    <div class="col-sm-3">
+      <h1>ARZAK</h1>
+      <img class="restimg" src="img/arzak.jpg">
+      <p>This is other restaurant from Donostia, this is also a good restaurant if you want to eat good food.
+      Is a good place if you want to eat different type of food.</p>
+    </div>
+    <div class="col-sm-3">
+      <h1>BIDELUZE</h1>
+      <img class="restimg" src="img/bideluze.jpg">
+      <p>Is the last restaurant we choice that is a good place and cheap, this restaurant is a very good place to relax and eat something cheap.
+      A lot of people go to this restaurant because this restaurant has a sofa that anyone can use and for that lot of people go to take the sofa and relax.</p>
+    </div>
+  </div>
+    <button type="button" class="btn btn-success" id='sh' onclick="restaurants()">Show them on the map</button>
+  </div>
+<!-- Museums section -->
+  <div id="museum">
+    <div class="row">
+      <div class="col-sm-3">
+        <h1>San Telmo</h1>
+        <img class="monimg" src="img/san_telmo.jpg">
+        <p>The first museum we have is San Telmo a famous museum from Donostia that all the people know and that is interesting if you want to visit.
+        Is the most famous museum of Donostia that a lot of people that come from others countries visit and all of them think that is a good place to see,
+         also you can take all the time you need to see everything.</p>
+      </div>
+      <div class="col-sm-3">
+        <h1>Aquarium</h1>
+        <img class="monimg" src="img/aquarium.jpg">
+        <p>The aquarium is other museum from Donostia that is very good to enjoy and relax. Is a good place
+           if you want to relax and take your time to see everything same as San Telmo.</p>
+      </div>
+
+      <div class="col-sm-3">
+        <h1>Eureka</h1>
+        <img class="monimg" src="img/eureka.jpg">
+        <p>This it would be the last museum we know that is located in Donostia same as the rest,
+           we know there are more but we prefer to put this because this museum is for childrens,
+            here childrens can enjoy the time seeing different thinks.</p>
+      </div>
+      </div>
+    <button type="button" class="btn btn-success" id='sh' onclick="museums()">Show them on the map</button>
+  </div>
+<!-- monuments -->
+<div id="monument">
+  <div class="row">
+    <div class="col-sm-3">
+      <h1>Buen Pastor</h1>
+      <img class="monimg" src="img/catedral_pastor.jpg">
+      <p>Buen Pastor is a monument that is located in Donostia and all the people know about this monument.</p>
+    </div>
+    <div class="col-sm-3">
+      <h1>Peine del viento</h1>
+      <img class="monimg" src="img/peine_viento.jpg">
+      <p>The Comb of the Wind is located at the western end of La Concha Bay, at the end of Ondarreta beach, in San Sebastián.
+        It is made up of three of Chillida’s monumental steel sculptures, weighing 10 tons each, embedded in natural rocks rising from the Cantabrian Sea.</p>
+      </div>
+    <div class="col-sm-3">
+      <h1>Kursaal</h1>
+      <img class="monimg" src="img/kursaal.jpg">
+      <p>Kursaal is other monument that is near to our school same as Campero but in this case is a monument, a good place that you can enjoy because sometimes they put some events inside this place.</p>
+    </div>
+  </div>
+  <button type="button" class="btn btn-success" id='sh' onclick="monuments()">Show them on the map</button>
+</div>
+<!--this is the section of the map-->
+<div id="mapspace">
+  <div id="map"></div>
+  <div class="row">
+    <div class="col-sm-3" id='but1'>
+        <button type="button" class="btn btn-primary" onclick="showmarkers()">Show all the Markers</button></div>
+    <div class="col-sm-3" id='but2'>
+      <button type="button" class="btn btn-danger" onclick="deletemarkers()">Hide all the Markers</button></div>
+    <div class="col-sm-3" id='but3'>
+      <button type="button" class="btn btn-info" onclick="zoomTo()">Go to...</button></div>
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script src="js/script.js" rel="javascript" type="text/javascript">
+</script>
+  </body>
+</html>

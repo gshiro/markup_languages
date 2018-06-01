@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE note SYSTEM "exam.dtd">
+<Places>
+	<restaurants>
+		<restaurant>
+			<name>Campero</name>
+			<location>Donostia</location>
+			<description>The restaurant that is near to our school</description>
+		</restaurant>
+		<restaurant>
+			<name>Arzak</name>
+			<location>Donostia</location>
+			<description>A good restaurant located in Donostia.</description>
+		</restaurant>
+		<restaurant>
+			<name>Bideluze</name>
+			<location>Donostia</location>
+			<description>A cheap restaurant that is very good to go and relax.</description>
+		</restaurant>
+	</restaurants>
+	<monuments>
+		<monument>
+			<name>Buen Pastor</name>
+			<location>Donostia</location>
+			<description>One of the most important places of Donostia very famous.</description>
+		</monument>
+		<monument>
+			<name>Peine del viento</name>
+			<location>Donostia</location>
+			<description>This is another monument from Donostia also important</description>
+		</monument>
+		<monument>
+			<name>Kursaal</name>
+			<location>Donostia</location>
+			<description>One monument that is also near to our school very good if you want to see.</description>
+		</monument>
+	</monuments>
+	<museums>
+		<museum>
+			<name>Eureka</name>
+			<location>Donostia</location>
+			<description>One museum prepare for childrens to do they can enjoy.</description>
+		</museum>
+		<museum>
+			<name>Aquarium</name>
+			<location>Donostia</location>
+			<description>One of the important museum from Donostia good to go and relax.</description>
+		</museum>
+		<museum>
+			<name>San Telmo</name>
+			<location>Donostia</location>
+			<description>One of the most important museum that is located in Donostia, very good to enjoy, learn and relax.</description>
+		</museum>
+	</museums>
+</Places>

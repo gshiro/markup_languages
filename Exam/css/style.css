@@ -1,0 +1,87 @@
+body{
+  /*background-image: url('../img/back.jpg');*/
+  background-image: url('../img/back4.jpg');
+  background-repeat: no-repeat;
+}
+
+#titulo{
+  margin-left: 40%;
+  font-weight: bold;
+}
+.portada{
+  margin-left: 25%;
+  margin-bottom: 30px;
+  margin-top: 30px;
+}
+#one {
+  font-weight: bold;
+  margin-left: 30%;
+
+}
+#homepage{
+  background-color: white;
+  margin-left: 25%;
+  margin-right: 25%;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+.ico{
+  width: 25px;
+  height: 25px;
+}
+#mapspace {
+ width: 1900px;
+ height: 800px;
+ display: block;
+}
+#map {
+ width: 1900px;
+ height: 800px;
+ display: block;
+ margin-left: 10px;
+ margin-top: 10px;
+}
+.col-sm-3 {
+  margin: 2px;
+  border: 10px solid black;
+  border-image: url("../img/border.png") 10 round;
+  background-color: white;
+}
+.row {
+  width: 2000px;
+  padding: 10px;
+}
+#restaurant, #monument, #museum {
+  display: none;
+}
+#homepage {
+  display: block;
+}
+h1 {
+  font-family: 'Dancing Script', cursive;
+  margin-bottom: 10px;
+}
+.restimg, .monimg, .musimg {
+  width: 450px;
+  height: 250px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+p {
+  margin-bottom: 40px;
+  color: black;
+}
+.rest, .mon, .mus {
+  visibility: hidden;
+}
+#but1, #but2, #but3 {
+  border: none;
+  background-color: transparent;
+}
+#but1 {
+  margin-left: 12%;
+}
+#sh {
+  margin-left: 35%;
+}

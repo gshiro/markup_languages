@@ -1,0 +1,16 @@
+<!ELEMENT Places (restaurants, monuments, museums)>
+<!ELEMENT restaurants (restaurant)>
+<!ELEMENT restaurant (name, location, description)>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT location (#PCDATA)>
+<!ELEMENT description (#PCDATA)>
+<!ELEMENT monuments (monument)>
+<!ELEMENT monument (name, location, description)>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT location (#PCDATA)>
+<!ELEMENT description (#PCDATA)>
+<!ELEMENT museums (museum)>
+<!ELEMENT museum (name, location, description)>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT location (#PCDATA)>
+<!ELEMENT description (#PCDATA)>
